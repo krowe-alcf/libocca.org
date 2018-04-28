@@ -1,5 +1,5 @@
 - **User Guide**
-  - [Getting Started](/guide/user-guide/getting-started)
+  - [Introduction](/guide/user-guide/introduction)
   - [Command-Line Interface](/guide/user-guide/command-line-interface)
   - [Need Help?](/guide/user-guide/need-help)
 

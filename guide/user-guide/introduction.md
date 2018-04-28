@@ -1,14 +1,18 @@
-# Getting Started
+# Introduction
+
+## What is OCCA?
+
+In a nutshell, OCCA (like *oca*-rina) is an open-source library which aims to
+
+- Make it easy to program different types of devices (e.g. _CPU_, _GPU_, _FPGA_)
+- Provide a [unified API](/guide/occa/introduction) for interacting with backend device APIs (e.g. _OpenMP_, _CUDA_, _OpenCL_)
+- Use just-in-time compilation to build backend kernels
+- Provide a [kernel language](/guide/okl/introduction), a minor extension to C, to abstract programming for each backend
+
+
+## Getting Started
 
 The OCCA source code can be found in [Github](https://github.com/libocca/occa) under an MIT License
-
-Below are the list of dependencies
-
-- C++ compiler
-- `make`
-
-
-# Download and Installation
 
 Use git to download OCCA or download the latest release `.tar.gz` from the [Github releases](https://github.com/libocca/occa/releases)
 
@@ -35,7 +39,7 @@ We also need to add the shared library (`libocca.so`) to our linker path
     ```
 :::
 
-# Testing Installation
+## Testing Installation
 
 OCCA comes with a command called `occa`, found inside the `bin` directory.
 The purpose of `occa` is to help gather device information as well as other useful utilities
@@ -94,7 +98,7 @@ Output:
 ==========+======================+==========================================
 ```
 
-# Example
+## Running an Example
 
 The simplest example is to create and add two vectors together
 
@@ -114,7 +118,7 @@ clang++ -x c++ -fPIC -shared -I. -D__extern_always_inline=inline -O3 -mtune=nati
 4: 1
 ```
 
-# Kernel Caching
+## Kernel Caching
 
 Note that when running `addVectors` is run a second time, the compilation info changes.
 Compiled kernels are cached and its binaries are reused if nothing changed in the compilation step (e.g. device information, kernel defines, etc)

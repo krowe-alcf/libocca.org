@@ -1,6 +1,6 @@
 - [Home](/)
 - Learn
-  - [Guide](/guide/occa/introduction)
+  - [Guide](/guide/user-guide/introduction)
   - [API](/api/)
   - [Examples](/examples/)
 
