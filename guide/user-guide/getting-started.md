@@ -13,7 +13,7 @@ Below are the list of dependencies
 Use git to download OCCA or download the latest release `.tar.gz` from the [Github releases](https://github.com/libocca/occa/releases)
 
 ```bash
-git clone https://github.com/libocca/occa.git
+git clone --depth 1 https://github.com/libocca/occa.git
 cd occa
 make -j4
 ```
