@@ -1,3 +1,12 @@
+/*---[ Common ]-----------------------*/
+.indent {
+    margin-top: -0.8em;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 1px solid #ededed;
+}
+/*====================================*/
+
 /*---[ Header & Footer ]--------------*/
 #edit-source {
     position: absolute;
@@ -114,6 +123,7 @@ body.no-sidebar .content {
 pre:after {
     font-size: 0.8em !important;
     font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+    font-weight: 400;
 }
 
 .markdown-section code {

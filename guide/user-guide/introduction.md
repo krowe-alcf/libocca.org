@@ -44,7 +44,7 @@ We also need to add the shared library (`libocca.so`) to our linker path
 OCCA comes with a command called `occa`, found inside the `bin` directory.
 The purpose of `occa` is to help gather device information as well as other useful utilities
 
-For more information, please see the [Command-Line Interface](user-guide/command-line-interface) section.
+For more information, please see the [Command-Line Interface](/guide/user-guide/command-line-interface) section.
 
 ```bash
 ./bin/occa info

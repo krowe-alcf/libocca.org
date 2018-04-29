@@ -20,10 +20,33 @@ occa.addFooter = (content) => (
 );
 //======================================
 
-//---[ Include ]------------------------
-occa.addIncludes = (vm, content) => {
-  return content;
+//---[ Indent ]-------------------------
+occa.parseIndent = (content) => {
+  const parts = marked.lexer(content);
+  const mdContent = occa.tokensToHTML(parts);
+  return (
+    '<div class="indent">\n'
+      + mdContent
+      + '</div>\n'
+  );
 }
+
+occa.addIndents = (content) => {
+  const re = /\n::: indent\n([\s\S]*?)\n:::(\n|$)/g;
+  const parts = [];
+  var lastIndex = 0;
+  while ((match = re.exec(content)) != null) {
+    const [fullMatch, indentContent] = match;
+
+    parts.push(content.substring(lastIndex, match.index));
+    parts.push(occa.parseIndent(indentContent));
+
+    lastIndex = match.index + fullMatch.length;
+  }
+  parts.push(content.substring(lastIndex));
+
+  return parts.join('\n');
+};
 //======================================
 
 //---[ Tabs ]---------------------------
@@ -32,6 +55,9 @@ occa.markdown = {
     ''
   ),
   text: ({ text }) => (
+    `<p>${text}</p>`
+  ),
+  paragraph: ({ text }) => (
     `<p>${text}</p>`
   ),
   list_start: () => (
@@ -89,7 +115,7 @@ occa.tokenToMarkdown = (token) => {
   if (type in occa.markdown) {
     return occa.markdown[token.type](token);
   }
-  console.error(`Missing token format for: ${token.type}`);
+  console.error(`Missing token format for: ${token.type}`, token);
   return '';
 };
 
@@ -121,7 +147,7 @@ occa.mergeTextTokens = (tokens) => {
   return newTokens;
 };
 
-occa.tokensToMarkdown = (tokens) => {
+occa.tokensToHTML = (tokens) => {
   tokens = occa.mergeTextTokens(tokens);
   return (
     tokens
@@ -132,7 +158,7 @@ occa.tokensToMarkdown = (tokens) => {
 
 occa.getTab = ({ tab, content }) => (
   `      <md-tab id="${tab}" md-label="${tab}">\n`
-    + occa.tokensToMarkdown(content)
+    + occa.tokensToHTML(content)
     + '      </md-tab>'
 );
 
@@ -238,7 +264,7 @@ occa.docsifyPlugin = (hook, vm) => {
   });
 
   hook.beforeEach((content) => {
-    content = occa.addIncludes(vm, content);
+    content = occa.addIndents(content);
     content = occa.addTabs(content);
     content = occa.addFooter(content);
     return content;
@@ -261,3 +287,12 @@ occa.docsifyPlugin = (hook, vm) => {
     }
   });
 };
+
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
