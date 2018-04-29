@@ -18,6 +18,6 @@ In a nutshell, OCCA (like *oca*-rina) is an open-source library which aims to
 - [Getting started](/guide/user-guide/introduction)
 - [Guide to using the OCCA API](/guide/occa/introduction)
 - [Guide to learning the OCCA kernel language](/guide/okl/introduction)
-- [API Documentation](/api)
+- [API Documentation](/api/)
 - [Examples](/examples)
 - [History of OCCA](/history)
