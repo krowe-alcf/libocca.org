@@ -37,7 +37,7 @@
     <h3>Tim Warburton</h3>
     <dl>
       <dt><i class="fa fa-briefcase"></i></dt>
-      <dd>John K. Costain Faculty Chair, Virginia Tech.</dd>
+      <dd>John K. Costain Faculty Chair, Virginia Tech</dd>
       <dt><i class="fa fa-map-marker"></i></dt>
       <dd>Blacksburg, VA, USA</dd>
       <dt><i class="fa fa-link"></i></dt>
