@@ -58,6 +58,30 @@ a:not(.md-button):hover {
 
 
 /*---[ Sidebar ]----------------------*/
+/*  |---[ Reorder sidebar ]-----------*/
+.search {
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    border-top: 1px solid #EEEEEE;
+    z-index: 10;
+    background-color: #FFFFFF;
+}
+
+.sidebar > h1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar-nav {
+    position: absolute;
+    width: 100%;
+    top: 130px;
+}
+/*  |=================================*/
+
 .sidebar > h1 > a.app-name-link {
     color: #2B7FB9;
 }
