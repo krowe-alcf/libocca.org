@@ -48,7 +48,7 @@ We start off by connecting to a physical device through an OCCA device object.
     ```c
     #include "occa.h"
 
-    occaDevice device = occaCreateDevice("mode: 'Serial'");
+    occaDevice device = occaCreateDevice(occaString("mode: 'Serial'"));
     ```
 
 :::

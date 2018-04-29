@@ -10,8 +10,8 @@
     **Sorry for the inconvenience!**
 
 **Source Code**
-- [main.cpp](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/cpp/main.cpp)
-- [addVectors.okl](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/cpp/addVectors.okl)
+- [main.c](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/c/main.c)
+- [addVectors.okl](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/c/addVectors.okl)
 
 ---
 
@@ -22,12 +22,12 @@ We'll walk through parts of the example explaining the parts and logic behind ea
 
 We'll start off by allocating and initializing our vectors in the host
 
-```cpp
+```c
 int entries = 5;
 
-float *a  = new float[entries];
-float *b  = new float[entries];
-float *ab = new float[entries];
+float *a  = (float*) malloc(entries * sizeof(float));
+float *b  = (float*) malloc(entries * sizeof(float));
+float *ab = (float*) malloc(entries * sizeof(float));
 
 for (int i = 0; i < entries; ++i) {
   a[i]  = i;
@@ -46,32 +46,42 @@ We'll initialize our device by giving it the backend we wish to use along with i
 
 - Serial
 
-    ```cpp
-    occa::device device("mode: 'Serial'");
+    ```c
+    occaDevice device = occaCreateDevice(
+        occaString("mode: 'Serial'")
+    );
     ```
 
 - OpenMP
 
-    ```cpp
-    occa::device device("mode: 'OpenMP', threads: 4");
+    ```c
+    occaDevice device = occaCreateDevice(
+        occaString("mode: 'OpenMP', threads: 4")
+    );
     ```
 
 - Threads
 
-    ```cpp
-    occa::device device("mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]");
+    ```c
+    occaDevice device = occaCreateDevice(
+        occaString("mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]")
+    );
     ```
 
 - OpenCL
 
-    ```cpp
-    occa::device device("mode: 'OpenCL', deviceID: 0, platformID: 0");
+    ```c
+    occaDevice device = occaCreateDevice(
+        occaString("mode: 'OpenCL', deviceID: 0, platformID: 0")
+    );
     ```
 
 - CUDA
 
-    ```cpp
-    occa::device device("mode: 'CUDA', deviceID: 0");
+    ```c
+    occaDevice device = occaCreateDevice(
+        occaString("mode: 'CUDA', deviceID: 0")
+    );
     ```
 
 :::
@@ -80,17 +90,17 @@ We'll initialize our device by giving it the backend we wish to use along with i
 
 We need to allocate device memory which we'll use to add the vectors on the device
 
-```cpp
-occa::memory o_a  = device.malloc(entries * sizeof(float));
-occa::memory o_b  = device.malloc(entries * sizeof(float));
-occa::memory o_ab = device.malloc(entries * sizeof(float));
+```c
+occaMemory o_a  = occaDeviceMalloc(device, entries*sizeof(float), NULL, occaDefault);
+occaMemory o_b  = occaDeviceMalloc(device, entries*sizeof(float), NULL, occaDefault);
+occaMemory o_ab = occaDeviceMalloc(device, entries*sizeof(float), NULL, occaDefault);
 ```
 
 We need to initialize `o_a` and `o_b` with the host's `a` and `b` vectors
 
-```cpp
-o_a.copyFrom(a);
-o_b.copyFrom(b);
+```c
+occaCopyPtrToMem(o_a, a, entries*sizeof(float), 0, occaDefault);
+occaCopyPtrToMem(o_b, b, occaAllBytes         , 0, occaDefault);
 ```
 
 Note we don't initialize `o_ab` since it'll be initialized when we add `o_a` and `o_b` in the device
@@ -100,50 +110,65 @@ Note we don't initialize `o_ab` since it'll be initialized when we add `o_a` and
 > A _kernel_ is a function on a device
 
 We now create a kernel in the device by giving it the filename where the kernel lives, along with the kernel name.
-We'll show and explain the [addVectors.okl](/examples/add-vectors?id=addvectorsokl) source code in the end.
+We'll show and explain the [addVectors.okl](/examples/c/add-vectors?id=addvectorsokl) source code in the end.
 
-```cpp
-occa::kernel addVectors = device.buildKernel("addVectors.okl",
-                                             "addVectors");
+```c
+occaKernel addVectors = occaDeviceBuildKernel(device,
+                                              "addVectors.okl",
+                                              "addVectors",
+                                              occaDefault);
 ```
 
-We now launch the `addVectors` kernel as if it were a regular function
+We now launch the `addVectors` kernel
 
-```cpp
-addVectors(entries, o_a, o_b, o_ab);
+```c
+occaKernelRun(addVectors,
+              occaInt(entries), o_a, o_b, o_ab);
 ```
 
-?> Note that not only do we pass `occa::memory` objects, but we can also pass primitive types such as `int`, `float`, and `double`
+Note that we need to wrap primitive types, such as:
+- `int` &nbsp; &nbsp; &nbsp; &nbsp; &rarr; &nbsp; `occaInt(value)`
+- `float` &nbsp; &nbsp; &rarr; &nbsp; `occaFloat(value)`
+- `double` &nbsp; &rarr; &nbsp; `occaDouble(value)`
 
 ## Copy Data to Host
 
 To check if we added the vectors properly, we'll need to copy over the results in `o_ab` to the host
 
-```cpp
-o_ab.copyTo(ab);
+```c
+occaCopyMemToPtr(ab, o_ab, occaAllBytes, 0, occaDefault);
 ```
 
 ## Cleaning Up
 
 Let's make sure we got the right results
 
-```cpp
+```c
 for (int i = 0; i < entries; ++i) {
   if (ab[i] != (a[i] + b[i])) {
-    throw 1;
+    exit(1);
   }
 }
 ```
 
-Lastly we free our host memory
+We need to free our host memory
 
-```cpp
-delete [] a;
-delete [] b;
-delete [] ab;
+```c
+free(a);
+free(b);
+free(ab);
 ```
 
-?> All `occa` objects use reference counting to auto-free anything allocated!
+as well as our occa objects
+
+```c
+occaFree(props);
+occaFree(addVectors);
+occaFree(o_a);
+occaFree(o_b);
+occaFree(o_ab);
+occaFree(device);
+```
 
 ## addVectors.okl
 
