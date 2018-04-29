@@ -47,6 +47,10 @@ a:not(.md-button):hover {
     transition: color .3s;
 }
 
+.app-nav > ul > li > p > a {
+    font-size: 15px;
+}
+
 .app-nav a:hover {
     text-decoration: none !important;
 }
