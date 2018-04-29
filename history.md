@@ -11,7 +11,7 @@ We still faced the problem that we had duplicate code for the kernels.
 ### OCCA v1
 
 The first approach to solving this used compiler macros that were defined based on the backend.
-If curious, this approach is still documented in the [original OCCA paper](https://arxiv.org/pdf/1403.0968.pdf).
+If curious, this approach is still documented in the [original OCCA paper](https://arxiv.org/abs/1403.0968)
 Internally in the group, we call this **OCCA v1**.
 
 The _Hello World_ of kernels in **OCCA v1**

@@ -72,6 +72,9 @@ occa.markdown = {
   list_item_end: () => (
     '</li>'
   ),
+  html: ({ text }) => (
+    text
+  ),
 };
 
 occa.markdown.code = ({ lang, text }) => {
@@ -246,12 +249,10 @@ occa.addTabs = (content) => {
 };
 //======================================
 
-occa.mainPages = new Set([
-  'README.md',
-  'history.md',
-  'team.md',
-  'gallery.md',
-]);
+// Root-level markdowns don't have a sidebar
+occa.hasSidebar = (file) => (
+  !file.match(/^[^/]*\.md$/)
+)
 
 occa.docsifyPlugin = (hook, vm) => {
   hook.init(() => {
@@ -261,6 +262,7 @@ occa.docsifyPlugin = (hook, vm) => {
         greedy: true,
       },
     });
+    Prism.languages.bibtex = Prism.languages.extend('latex');
   });
 
   hook.beforeEach((content) => {
@@ -280,10 +282,10 @@ occa.docsifyPlugin = (hook, vm) => {
       dom.classList.add('api-container');
     }
     // Close sidebar
-    if (occa.mainPages.has(file)) {
-      dom.classList.add('no-sidebar');
-    } else {
+    if (occa.hasSidebar(file)) {
       dom.classList.remove('no-sidebar');
+    } else {
+      dom.classList.add('no-sidebar');
     }
   });
 };

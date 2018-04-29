@@ -323,15 +323,15 @@ code .token.annotation {
     margin-left: 5px;
 }
 
-.member .social .fa-github {
+.fa-github {
     color: #2C3E50;
 }
 
-.member .social .fa-twitter {
+.fa-twitter {
     color: #1DA1F3;
 }
 
-.member .social .fa-google {
+.fa-google {
     color: #4285f4;
 }
 
@@ -372,6 +372,18 @@ code .token.annotation {
 
 .gallery-entry .description h3 {
     margin-top: 0;
+}
+/*====================================*/
+
+
+/*---[ Publications ]-----------------*/
+.authors {
+    margin-top: -0.9em;
+    font-style: italic;
+}
+
+.authors a {
+    font-weight: 400;
 }
 /*====================================*/
 

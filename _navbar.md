@@ -9,3 +9,4 @@
   - [History](/history)
   - [Team](/team)
   - [Gallery](/gallery)
+  - [Publications](/publications)

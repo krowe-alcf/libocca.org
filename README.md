@@ -21,3 +21,5 @@ In a nutshell, OCCA (like *oca*-rina) is an open-source library which aims to
 - [API Documentation](/api/)
 - [Examples](/examples/)
 - [History of OCCA](/history)
+- [Projects using OCCA](/gallery)
+- [Papers](/papers)
