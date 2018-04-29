@@ -16,7 +16,6 @@ Properties are used as a general way to store information, for example
 - C
     ```c
     occaProperties props = occaCreatePropertiesFromString("mode: 'CUDA', deviceID: 0");
-    occaFree(props);
     ```
 
 :::
