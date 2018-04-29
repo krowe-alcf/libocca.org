@@ -16,10 +16,11 @@ In a nutshell, OCCA (like *oca*-rina) is an open-source library which aims to
 ### Quick Navigation
 
 - [Getting started](/guide/user-guide/introduction)
-- [Guide to using the OCCA API](/guide/occa/introduction)
-- [Guide to learning the OCCA kernel language](/guide/okl/introduction)
+- [Guide to the OCCA API](/guide/occa/introduction)
+- [Guide to the OCCA kernel language](/guide/okl/introduction)
 - [API Documentation](/api/)
-- [Examples](/examples/)
+- [C++ Examples](/examples/cpp/add-vectors)
+- [C Examples](/examples/c/add-vectors)
 - [History of OCCA](/history)
 - [Projects using OCCA](/gallery)
 - [Publications](/publications)
