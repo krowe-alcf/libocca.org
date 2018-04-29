@@ -49,6 +49,12 @@ a:not(.md-button):hover {
 .app-nav {
     margin-right: 100px;
 }
+
+.app-nav .arrow {
+    color: #CFD3D9;
+    margin-left: 3px;
+}
+
 .app-nav > ul {
     padding-left: 0px !important;
 }
