@@ -32,8 +32,9 @@ If you have a paper that used OCCA and would like to add it, feel free to
 ##### 2018
 ::: indent
 
-[An entropy stable discontinuous Galerkin method for the shallow water equations on curvilinear meshes with wet/dry fronts accelerated by GPUs
-](https://arxiv.org/abs/1804.02221)
+[Hermite Methods for the Scalar Wave Equation](https://arxiv.org/abs/1802.05246)
+
+[An entropy stable discontinuous Galerkin method for the shallow water equations on curvilinear meshes with wet/dry fronts accelerated by GPUs](https://arxiv.org/abs/1804.02221)
 
 [GPU Acceleration of a High-Order Discontinuous Galerkin Incompressible Flow Solver](https://arxiv.org/abs/1801.00246)
 
@@ -42,7 +43,11 @@ If you have a paper that used OCCA and would like to add it, feel free to
 ##### 2017
 ::: indent
 
+[Acceleration of tensor-product operations for high-order finite element methods](https://arxiv.org/abs/1711.00903)
+
 [A GPU-accelerated nodal discontinuous Galerkin method with high-order absorbing boundary conditions and corner/edge compatibility](https://arxiv.org/abs/1610.05023)
+
+[GPU Acceleration of Hermite Methods for the Simulation of Wave Propagation](https://link.springer.com/chapter/10.1007%2F978-3-319-65870-4_25)
 
 [GPU-accelerated Bernstein-Bezier discontinuous Galerkin methods for wave problems](https://arxiv.org/abs/1512.06025)
 
@@ -63,6 +68,8 @@ If you have a paper that used OCCA and would like to add it, feel free to
 
 [A GPU-accelerated adaptive discontinuous Galerkin method for level set equation](https://www.tandfonline.com/doi/abs/10.1080/10618562.2016.1155704)
 
+[GPU performance analysis of a nodal discontinuous Galerkin method for acoustic and elastic models](https://arxiv.org/abs/1602.07997)
+
 :::
 
 ##### 2015
@@ -76,11 +83,17 @@ If you have a paper that used OCCA and would like to add it, feel free to
 
 [GPU accelerated spectral finite elements on all-hex meshes](https://arxiv.org/abs/1506.05996)
 
+[Higgs Boson equation in de Sitter spacetime: Numerical investigation of bubbles using GPUs](https://search.proquest.com/openview/0ce477b9a1a6a0703eafc9d05bf22030/1?pq-origsite=gscholar&cbl=18750&diss=y)
+
 [OKL: A Unified Language for Parallel Architectures](https://scholarship.rice.edu/bitstream/handle/1911/88213/MEDINA-DOCUMENT-2015.pdf?sequence=1)
+
+[Portability and Performance of Nuclear Reactor Simulations on Many-Core Architectures](https://dl.acm.org/citation.cfm?id=2820092)
 
 :::
 
 ##### 2014
 ::: indent
+[brainNek: Modeling Laser-Induced Thermal Therapy for Brain Cancer with Spectral Elements on GPUs](https://web.stanford.edu/~tym1/materials/moon_bs_thesis.pdf)
+
 [OCCA: A Unified Approach for Multi-Threading Languages](https://scholarship.rice.edu/bitstream/handle/1911/88205/MEDINA-DOCUMENT-2014.pdf?sequence=1)
 :::
