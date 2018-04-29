@@ -1,4 +1,4 @@
-- **API**
+- [**API**](/api/)
   - [Properties](/api/properties)
   - [Device](/api/device)
   - [Memory](/api/memory)
