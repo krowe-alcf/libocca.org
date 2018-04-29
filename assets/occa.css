@@ -68,6 +68,10 @@ a:not(.md-button):hover {
     background-color: #FFFFFF;
 }
 
+.sidebar {
+    overflow: hidden;
+}
+
 .sidebar > h1 {
     position: absolute;
     top: 20px;
@@ -79,6 +83,11 @@ a:not(.md-button):hover {
     position: absolute;
     width: 100%;
     top: 130px;
+    /* Make only the nav scrollable */
+    overflow-y: auto;
+    height: calc(100% - 168px); /* top (130px) + toggle (38px) */
+    box-sizing: content-box;
+    padding-right: 17px;
 }
 /*  |=================================*/
 
