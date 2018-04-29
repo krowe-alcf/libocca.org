@@ -2,7 +2,7 @@
 
 <gallery-item
   name="MFEM"
-  link="https://computation.llnl.gov/projects/mfem-scalable-finite-element-discretization-library"
+  link="http://mfem.org"
   from="Lawrence Livermore National Lab"
   image="mfem.png"
 >
@@ -21,7 +21,7 @@
 
 <gallery-item
   name="NUMA"
-  link="https://my.nps.edu/web/math/research"
+  link="http://frankgiraldo.wixsite.com/mysite/numa"
   from="Naval Postgraduate School"
   image="numa.jpg"
 >

@@ -430,6 +430,11 @@ code .token.annotation {
     height: 90px;
 }
 
+.gallery-entry .at {
+    font-weight: 100;
+    color: #7A8796;
+}
+
 .gallery-entry .description {
     padding-left: 26px;
     padding-top: 0.3em;
