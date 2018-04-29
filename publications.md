@@ -76,4 +76,11 @@ If you have a paper that used OCCA and would like to add it, feel free to
 
 [GPU accelerated spectral finite elements on all-hex meshes](https://arxiv.org/abs/1506.05996)
 
+[OKL: A Unified Language for Parallel Architectures](https://scholarship.rice.edu/bitstream/handle/1911/88213/MEDINA-DOCUMENT-2015.pdf?sequence=1)
+
+:::
+
+##### 2014
+::: indent
+[OCCA: A Unified Approach for Multi-Threading Languages](https://scholarship.rice.edu/bitstream/handle/1911/88205/MEDINA-DOCUMENT-2014.pdf?sequence=1)
 :::
