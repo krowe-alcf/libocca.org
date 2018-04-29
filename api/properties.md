@@ -23,7 +23,6 @@
         - props
     - hi
         - test test
-    ```
 
 :::
 
