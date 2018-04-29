@@ -3,7 +3,8 @@
 - Learn
   - [Guide](/guide/user-guide/introduction)
   - [API](/api/)
-  - [Examples](/examples/cpp/add-vectors)
+  - [C++ Examples](/examples/cpp/add-vectors)
+  - [C Examples](/examples/c/add-vectors)
 
 - About
   - [History](/history)
