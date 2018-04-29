@@ -366,7 +366,7 @@ code .token.annotation {
 
 .gallery-entry .description {
     padding-left: 26px;
-    padding-top: 1em;
+    padding-top: 0.3em;
     flex: 1;
 }
 

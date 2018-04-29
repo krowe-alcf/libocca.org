@@ -266,6 +266,10 @@ occa.docsifyPlugin = (hook, vm) => {
   });
 
   hook.beforeEach((content) => {
+    // No \n means the last line turns into a header
+    if (!content.endsWith('\n')) {
+      content += '\n';
+    }
     content = occa.addIndents(content);
     content = occa.addTabs(content);
     content = occa.addFooter(content);

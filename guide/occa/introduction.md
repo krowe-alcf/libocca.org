@@ -106,12 +106,12 @@ Here are examples for the all core modes supported in OCCA.
 - Threads
 
     ```cpp
-    "mode: 'Serial', threads: 4, pinnedCores: [0, 1, 2, 3]"
+    "mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]"
     ```
 
     ```js
     {
-      mode: 'Serial',
+      mode: 'Threads',
       threads: 4,
       pinnedCores: [0, 1, 2, 3]
     }
