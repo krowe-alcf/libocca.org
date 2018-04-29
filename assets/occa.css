@@ -264,10 +264,6 @@ code .token.annotation {
     margin-top: 2em;
 }
 
-.first.member {
-    margin-top: 4em;
-}
-
 .member .avatar {
     flex: 0 0 80px;
 }
@@ -284,6 +280,10 @@ code .token.annotation {
 
 .member .profile h3 {
     margin-top: 0;
+}
+
+.member .profile dl {
+    margin-top: 0.6em;
 }
 
 .member .profile dt {
@@ -307,7 +307,6 @@ code .token.annotation {
 .member .profile dd::after {
     display: block;
     content: " ";
-    margin-top: 0.6em;
 }
 
 .member .profile dt i {
@@ -319,7 +318,11 @@ code .token.annotation {
     font-size: 1.15em;
 }
 
-.member .social a:not(:first-child) {
+.member footer {
+    margin-top: 0.5em;
+}
+
+.member footer a:not(:first-child) {
     margin-left: 5px;
 }
 
@@ -336,7 +339,7 @@ code .token.annotation {
 }
 
 .team-header-gap {
-    height: 20px;
+    height: 1px;
 }
 /*====================================*/
 

@@ -294,10 +294,62 @@ occa.docsifyPlugin = (hook, vm) => {
   });
 };
 
+Vue.component('team-member', {
+  props: [
+    'name',
+    'image',
+    'job',
+    'location',
+    'links',
+    'github',
+    'twitter',
+    'googleScholar',
+  ],
+  template: (
+    '    <div class="member">'
+      + '  <div class="avatar">'
+      + '    <md-avatar>'
+      + '      <img v-bind:src="\'./assets/images/team/\' + image" v-bind:alt="name">'
+      + '    </md-avatar>'
+      + '  </div>'
+      + '  <div class="profile">'
+      + '    <h3>{{name}}</h3>'
+      + '    <dl>'
+      + '      <template v-if="job">'
+      + '        <dt><i class="fa fa-briefcase"></i></dt>'
+      + '        <dd>{{job}}</dd>'
+      + '      </template>'
+      + '      <template v-if="location">'
+      + '        <dt><i class="fa fa-map-marker"></i></dt>'
+      + '        <dd>{{location}}</dd>'
+      + '      </template>'
+      + '      <template v-for="link in links">'
+      + '        <dt><i class="fa fa-link"></i></dt>'
+      + '        <dd>'
+      + '          <a v-bind:href="link[1]" target="_blank">{{link[0]}}</a>'
+      + '        </dd>'
+      + '      </template>'
+      + '      <footer>'
+      + '        <a v-if="github" v-bind:href="\'https://github.com/\' + github" target="_blank">'
+      + '          <md-icon class="fa fa-github"></md-icon>'
+      + '        </a>'
+      + '        <a v-if="twitter" v-bind:href="\'https://twitter.com/\' + twitter" target="_blank">'
+      + '          <md-icon class="fa fa-twitter"></md-icon>'
+      + '        </a>'
+      + '        <a v-if="googleScholar" v-bind:href="googleScholar" target="_blank">'
+      + '          <md-icon class="fa fa-google"></md-icon>'
+      + '        </a>'
+      + '      </footer>'
+      + '    </dl>'
+      + '  </div>'
+      + '</div>'
+  ),
+});
+
 Vue.component('gallery-item', {
   props: ['name', 'link', 'from', 'image'],
   template: (
-    '<div class="gallery-entry">'
+    '    <div class="gallery-entry">'
       + '  <div class="image">'
       + '    <a href="http://mfem.org" target="_blank">'
       + '      <img v-bind:src="\'./assets/images/gallery/\' + image" alt="{{name}}">'
@@ -305,8 +357,8 @@ Vue.component('gallery-item', {
       + '  </div>'
       + '  <div class="description">'
       + '    <h3>{{name}} <a v-bind:href="link" target="_blank">@{{from}}</a></h3>'
-      + '    <slot></slot/>'
+      + '    <slot></slot>'
       + '  </div>'
       + '</div>'
-  )
+  ),
 });
