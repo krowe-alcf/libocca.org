@@ -294,11 +294,19 @@ occa.docsifyPlugin = (hook, vm) => {
   });
 };
 
-Vue.component('button-counter', {
-  data: function () {
-    return {
-      count: 0
-    }
-  },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
+Vue.component('gallery-item', {
+  props: ['name', 'link', 'from', 'image'],
+  template: (
+    '<div class="gallery-entry">'
+      + '  <div class="image">'
+      + '    <a href="http://mfem.org" target="_blank">'
+      + '      <img v-bind:src="\'./assets/images/gallery/\' + image" alt="{{name}}">'
+      + '    </a>'
+      + '  </div>'
+      + '  <div class="description">'
+      + '    <h3>{{name}} <a v-bind:href="link" target="_blank">@{{from}}</a></h3>'
+      + '    <slot></slot/>'
+      + '  </div>'
+      + '</div>'
+  )
+});
