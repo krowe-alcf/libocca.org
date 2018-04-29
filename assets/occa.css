@@ -8,15 +8,26 @@
 /*====================================*/
 
 /*---[ Header & Footer ]--------------*/
-#edit-source {
-    position: absolute;
-    top: 0;
+#footer {
+    color: #B2B3BA;
+    line-height: 1.7em;
 }
 
-#copyright {
+#footer > hr {
+    margin-bottom: 0.5em;
+}
+
+#footer a {
     color: #B2B3BA;
-    position: absolute;
-    bottom: 2em;
+    font-weight: 400;
+}
+
+#footer .docsify-text {
+    font-weight: 600;
+}
+
+#footer .heart {
+    color: #F99F9F;
 }
 
 #main {

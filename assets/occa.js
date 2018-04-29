@@ -12,11 +12,16 @@ occa.getLanguageLabel = (language) => (
 //---[ Header & Footer ]----------------
 occa.addFooter = (content) => (
   content
-    + '\n'
-    + '---\n'
-    + '<span id="copyright">\n'
-    + `  © Copyright 2014 - ${(new Date()).getFullYear()}, David Medina and Tim Warburton.\n`
-    + '</span>\n'
+    + '\n\n'
+    + '<div id="footer">\n'
+    + '  <hr/>\n'
+    + '  <div id="copyright">\n'
+    + `    © Copyright 2014 - ${(new Date()).getFullYear()}, David Medina and Tim Warburton.\n`
+    + '  </div>\n'
+    + '  <div>\n'
+    + '    <a href="https://docsify.js.org" target="_blank">Powered by <span class="docsify-text">Docsify</span> <span class="heart">&hearts;</span></a>\n'
+    + '  </div>\n'
+    + '</div>\n'
 );
 //======================================
 
