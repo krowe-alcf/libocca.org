@@ -77,6 +77,17 @@ body.no-sidebar .content {
 
 .github-corner {
     display: block !important;
+    border-bottom: 0 !important;
+    position: fixed !important;
+    right: 0 !important;
+    text-decoration: none !important;
+    top: 0 !important;
+    z-index: 1 !important;
+}
+
+.github-corner svg {
+    color: #FFFFFF !important;
+    fill: #2980B9 !important;
 }
 /*====================================*/
 
