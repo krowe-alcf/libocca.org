@@ -2,104 +2,41 @@
 
 ---
 
+## _(constructor)_
+
+```cpp
+properties(const std::string &s)`
+```
+
 ## isInitialized
 
-::: tabs language
-
-- C++
-
-    - **Arguments**
-        - bytes
-        - src
-        - props
-    - hi
-        - test test
-
-- C
-
-    - **Arguments**
-        - bytes
-        - src
-        - props
-    - hi
-        - test test
-
-:::
-
----
-
-## isInitialized() const
-
 - **Arguments**
-  - bytes
-  - src
-  - props
+    - bytes
+    - src
+    - props
+- hi
+    - test test
 
-- **Usage**
+## load
 
-    test test
+## operator []
 
----
+## get
 
-## isInitialized() const
+## remove
 
-- **Arguments**
-  - bytes
-  - src
-  - props
+## size
 
-- **Usage**
+## operator +
 
-    test test
+## operator +=
 
----
+## operator ==
 
-## isInitialized() const
+## is_*_
 
-- **Arguments**
-  - bytes
-  - src
-  - props
+## as_*_
 
-- **Usage**
+## _(getters)_
 
-    test test
-
----
-
-## isInitialized() const
-
-- **Arguments**
-  - bytes
-  - src
-  - props
-
-- **Usage**
-
-    test test
-
----
-
-## isInitialized() const
-
-- **Arguments**
-  - bytes
-  - src
-  - props
-
-- **Usage**
-
-    test test
-
----
-
-## isInitialized() const
-
-- **Arguments**
-  - bytes
-  - src
-  - props
-
-- **Usage**
-
-    test test
+## toString

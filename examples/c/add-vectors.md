@@ -18,7 +18,7 @@
 Our _'Hello World!'_ example is adding two vectors in parallel.
 We'll walk through parts of the example explaining the parts and logic behind each part.
 
-## Initializing Host Data
+## Initializing Host Vectors
 
 We'll start off by allocating and initializing our vectors in the host
 
@@ -86,7 +86,7 @@ We'll initialize our device by giving it the backend we wish to use along with i
 
 :::
 
-## Initializing Device Data
+## Initializing Device Vectors
 
 We need to allocate device memory which we'll use to add the vectors on the device
 
