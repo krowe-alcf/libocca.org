@@ -1,4 +1,4 @@
-- [Home](/)
+- [Home](/) &nbsp; &nbsp;
 
 - Learn <span class="arrow">&#x25BE;</span>
   - [Guide](/guide/user-guide/introduction)
