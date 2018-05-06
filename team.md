@@ -32,7 +32,7 @@
 <div class="team-header-gap"></div>
 
 <team-member
-  name="Lucas Wilcos"
+  name="Lucas Wilcox"
   image="lucas_wilcox.jpg"
   job="Associate Professor, Naval Postgraduate School"
   location="Monterey, CA, USA"
