@@ -73,9 +73,7 @@ yx[2 + (1 * 3)] = 0;
 
 `@tile` is used for auto-tiling loops
 
-!>
-    Tiling can cause the iterator to go **out of bounds**.
-    To automatically add a check, use `@safeTile`.
+?> Tiling can cause the iterator to go **out of bounds** so we add a check to prevent this.
 
 ```okl
 for (int i = 0; i < N; ++i; @tile(16)) {
@@ -88,7 +86,9 @@ for (int i = 0; i < N; ++i; @tile(16)) {
 ```cpp
 for (int iTile = 0; iTile < N; iTile += 16) {
   for (int i = iTile; i < (iTile + 16); ++i) {
-    // work
+    if (i < N) {
+      // work
+    }
   }
 }
 ```
@@ -106,29 +106,27 @@ for (int i = 0; i < N; ++i; @tile(16, @outer, @inner)) {
 ```okl
 for (int iTile = 0; iTile < N; iTile += 16; @outer) {
   for (int i = iTile; i < (iTile + 16); ++i; @inner) {
-    // work
+    if (i < N) {
+      // work
+    }
   }
 }
 ```
 
-## @safeTile
-
-`@safeTile` is the same as `@tile` but adds a check in the inner loop to prevent **out-of-bounds** accesses
+If you know your loop can be perfectly tiled, use the `check` keyword argument
 
 ```okl
-for (int i = 0; i < N; ++i; @safeTile(16)) {
+for (int i = 0; i < N; ++i; @tile(16, @outer, @inner, check=false)) {
   // work
 }
 ```
 
 <md-icon class="transform-arrow">arrow_downward</md-icon>
 
-```cpp
-for (int iTile = 0; iTile < N; iTile += 16) {
-  for (int i = iTile; i < (iTile + 16); ++i) {
-    if (i < N) {
-      // work
-    }
+```okl
+for (int iTile = 0; iTile < N; iTile += 16; @outer) {
+  for (int i = iTile; i < (iTile + 16); ++i; @inner) {
+    // work
   }
 }
 ```
