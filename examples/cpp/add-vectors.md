@@ -59,6 +59,7 @@ We'll initialize our device by giving it the backend we wish to use along with i
 - Threads
 
     ```cpp
+    // Currently 'Threads' mode is disabled until v1.1
     occa::device device("mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]");
     ```
 

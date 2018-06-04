@@ -106,6 +106,7 @@ Here are examples for the all core modes supported in OCCA.
 - Threads
 
     ```cpp
+    // Currently 'Threads' mode is disabled until v1.1
     "mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]"
     ```
 
