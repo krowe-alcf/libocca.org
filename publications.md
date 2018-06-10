@@ -32,6 +32,8 @@ If you have a paper that used OCCA and would like to add it, feel free to
 ##### 2018
 ::: indent
 
+[Discontinuous Galerkin Discretizations of the Boltzmann Equations in 2D: semi-analytic time stepping and absorbing boundary layers](https://arxiv.org/abs/1805.02082v1)
+
 [Hermite Methods for the Scalar Wave Equation](https://arxiv.org/abs/1802.05246)
 
 [An entropy stable discontinuous Galerkin method for the shallow water equations on curvilinear meshes with wet/dry fronts accelerated by GPUs](https://arxiv.org/abs/1804.02221)
