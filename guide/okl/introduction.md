@@ -1,14 +1,5 @@
 # Introduction
 
-!>
-    OKL is still transitioning from **v0.2** &nbsp;&rarr;&nbsp; **v1.0** (ETA is end of May '18)
-    <br/>
-    Examples are being written for **v1.0** which won't work at the moment, but linked source code will work
-    <br/>
-    [Check the v0.2 &nbsp;&rarr;&nbsp; v1.0 guide to see how to make the v1.0 examples work in the current OCCA setup](/guide/okl/v1)
-    <br/>
-    **Sorry for the inconvenience!**
-
 While OCCA aims to abstract device management, OKL (like mon-*ocle*) aims to abstract the programming of devices.
 
 In a nutshell, OKL extends the C language by using `@attributes` for code transformations and applies restrictions for exposing loop-based parallelism.

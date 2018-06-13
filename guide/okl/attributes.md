@@ -1,14 +1,5 @@
 # Attributes
 
-!>
-    OKL is still transitioning from **v0.2** &nbsp;&rarr;&nbsp; **v1.0** (ETA is end of May '18)
-    <br/>
-    Examples are being written for **v1.0** which won't work at the moment, but linked source code will work
-    <br/>
-    [Check the v0.2 &nbsp;&rarr;&nbsp; v1.0 guide to see how to make the v1.0 examples work in the current OCCA setup](/guide/okl/v1)
-    <br/>
-    **Sorry for the inconvenience!**
-
 Attributes, such as `@dim`, are used to programatically transform code, similar to `#pragma` directives
 
 Currently there are a few core attributes but a public API for defining and registering custom attributes will be released in v2

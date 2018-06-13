@@ -1,34 +1,25 @@
 # Loops in Depth
 
-!>
-    OKL is still transitioning from **v0.2** &nbsp;&rarr;&nbsp; **v1.0 (ETA is end of May '18)**
-    <br/>
-    Examples are being written for **v1.0** which won't work at the moment, but linked source code will work
-    <br/>
-    [Check the v0.2 &nbsp;&rarr;&nbsp; v1.0 guide to see how to make the v1.0 examples work in the current OCCA setup](/guide/okl/v1)
-    <br/>
-    **Sorry for the inconvenience!**
-
 A goal for OKL is to try and hide as much _magic_ from the user (what you see is what you get).
 
 Unfortunately, _magic_ is introduced once we enter the outer loops since we execute that code in a device.
 
 In order for OKL to work on supported backends, we place a few restrictions when dealing with outer and inner loops.
 
-<!-- ## Multiple Outer Loops -->
+## Multiple Outer Loops
 
-<!-- A kernel can have multiple outer loops which, similar to inner loops, guarantee all work is done before starting the second set of outer loops -->
+A kernel can have multiple outer loops which, similar to inner loops, guarantee all work is done before starting the second set of outer loops
 
-<!-- For example: -->
+For example:
 
-<!-- ```okl -->
-<!-- for (int i = 0; i < N; ++i; @outer) { -->
-<!--   a[i] = i; -->
-<!-- } -->
-<!-- for (int i = 0; i < N; ++i; @outer) { -->
-<!--   b[i] = a[N - i - 1]; -->
-<!-- } -->
-<!-- ``` -->
+```okl
+for (int i = 0; i < N; ++i; @outer) {
+  a[i] = i;
+}
+for (int i = 0; i < N; ++i; @outer) {
+  b[i] = a[N - i - 1];
+}
+```
 
 ## Multiple Inner Loops
 

@@ -1,14 +1,5 @@
 # Add Vectors
 
-!>
-    OKL is still transitioning from **v0.2** &nbsp;&rarr;&nbsp; **v1.0** (ETA is end of May '18)
-    <br/>
-    Examples are being written for **v1.0** which won't work at the moment, but linked source code will work
-    <br/>
-    [Check the v0.2 &nbsp;&rarr;&nbsp; v1.0 guide to see how to make the v1.0 examples work in the current OCCA setup](/guide/okl/v1)
-    <br/>
-    **Sorry for the inconvenience!**
-
 **Source Code**
 - [main.cpp](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/cpp/main.cpp)
 - [addVectors.okl](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/cpp/addVectors.okl)
@@ -154,9 +145,7 @@ delete [] ab;
                         const float *b,
                         float *ab) {
   for (int i = 0; i < entries; ++i; @tile(16, @outer, @inner)) {
-    if (i < entries) {
-      ab[i] = a[i] + b[i];
-    }
+    ab[i] = a[i] + b[i];
   }
 }
 ```
