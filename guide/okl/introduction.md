@@ -64,7 +64,7 @@ workgroup / workitem
 <div style="width: 26px; display: inline-block"></div>
 `@outer` / `@inner`
 
-?> Checkout the [Loops in Depth](/okl/loops-in-depth) section for more details about outer and inner loops
+?> Checkout the [Loops in Depth](/guide/okl/loops-in-depth) section for more details about outer and inner loops
 
 ## Outer Loops
 
