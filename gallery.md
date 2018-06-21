@@ -29,3 +29,12 @@
     NUMA solves the equations in a cube as well as on a sphere.
     NUMA is the dynamical core of the  U.S. Navy's NEPTUNE system.
 </gallery-item>
+
+<gallery-item
+  name="CompIntense"
+  from="CompIntence HPC, LLC"
+  image="compintense.png"
+>
+    CompIntense HPC, LLC has been using OCCA extensively in development of various software applications for its activities in the financial, biotechnology and energy domains.
+    OCCA facilitates rapid development of these compute-intensive applications with excellent results, and eases maintenance, porting and internal deployment across a heterogeneous and changing collection of compute resources.
+</gallery-item>
