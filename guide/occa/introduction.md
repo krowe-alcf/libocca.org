@@ -69,7 +69,7 @@ Properties uses JSON format with some shorthand notations found in JavaScript.
 ```
 
 The only property field required by OCCA when creating a device is `mode`.
-However, each `mode` has its own requirements, such as CUDA requiring a `deviceID`.
+However, each `mode` has its own requirements, such as CUDA requiring a `device_id`.
 In this case, we're initializing a device that runs code serially.
 
 ?> **Serial** mode is useful for debugging kernel code by enabling the use of debuggers such as _lldb_ or _gdb_
@@ -107,41 +107,41 @@ Here are examples for the all core modes supported in OCCA.
 
     ```cpp
     // Currently 'Threads' mode is disabled until v1.1
-    "mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]"
+    "mode: 'Threads', threads: 4, pinned_cores: [0, 1, 2, 3]"
     ```
 
     ```js
     {
       mode: 'Threads',
       threads: 4,
-      pinnedCores: [0, 1, 2, 3]
+      pinned_cores: [0, 1, 2, 3]
     }
     ```
 
 - OpenCL
 
     ```cpp
-    "mode: 'OpenCL', deviceID: 0, platformID: 0"
+    "mode: 'OpenCL', device_id: 0, platform_id: 0"
     ```
 
     ```js
     {
       mode: 'OpenCL',
-      deviceID: 0,
-      platformID: 0
+      device_id: 0,
+      platform_id: 0
     }
     ```
 
 - CUDA
 
     ```cpp
-    "mode: 'CUDA', deviceID: 0"
+    "mode: 'CUDA', device_id: 0"
     ```
 
     ```js
     {
       mode: 'CUDA',
-      deviceID: 0
+      device_id: 0
     }
     ```
 

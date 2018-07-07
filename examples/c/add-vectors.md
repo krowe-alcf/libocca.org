@@ -56,7 +56,7 @@ We'll initialize our device by giving it the backend we wish to use along with i
     ```c
     // Currently 'Threads' mode is disabled until v1.1
     occaDevice device = occaCreateDevice(
-        occaString("mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]")
+        occaString("mode: 'Threads', threads: 4, pinned_cores: [0, 1, 2, 3]")
     );
     ```
 
@@ -64,7 +64,7 @@ We'll initialize our device by giving it the backend we wish to use along with i
 
     ```c
     occaDevice device = occaCreateDevice(
-        occaString("mode: 'OpenCL', deviceID: 0, platformID: 0")
+        occaString("mode: 'OpenCL', device_id: 0, platform_id: 0")
     );
     ```
 
@@ -72,7 +72,7 @@ We'll initialize our device by giving it the backend we wish to use along with i
 
     ```c
     occaDevice device = occaCreateDevice(
-        occaString("mode: 'CUDA', deviceID: 0")
+        occaString("mode: 'CUDA', device_id: 0")
     );
     ```
 

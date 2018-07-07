@@ -51,19 +51,19 @@ We'll initialize our device by giving it the backend we wish to use along with i
 
     ```cpp
     // Currently 'Threads' mode is disabled until v1.1
-    occa::device device("mode: 'Threads', threads: 4, pinnedCores: [0, 1, 2, 3]");
+    occa::device device("mode: 'Threads', threads: 4, pinned_cores: [0, 1, 2, 3]");
     ```
 
 - OpenCL
 
     ```cpp
-    occa::device device("mode: 'OpenCL', deviceID: 0, platformID: 0");
+    occa::device device("mode: 'OpenCL', device_id: 0, platform_id: 0");
     ```
 
 - CUDA
 
     ```cpp
-    occa::device device("mode: 'CUDA', deviceID: 0");
+    occa::device device("mode: 'CUDA', device_id: 0");
     ```
 
 :::

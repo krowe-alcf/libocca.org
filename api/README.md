@@ -10,12 +10,12 @@ Properties are used as a general way to store information, for example
 
 - C++
     ```cpp
-    occa::properties props("mode: 'CUDA', deviceID: 0");
+    occa::properties props("mode: 'CUDA', device_id: 0");
     ```
 
 - C
     ```c
-    occaProperties props = occaCreatePropertiesFromString("mode: 'CUDA', deviceID: 0");
+    occaProperties props = occaCreatePropertiesFromString("mode: 'CUDA', device_id: 0");
     ```
 
 :::
@@ -25,7 +25,7 @@ Properties are used as a general way to store information, for example
 ```js
 {
   mode: 'CUDA',
-  deviceID: 0,
+  device_id: 0,
 }
 ```
 
@@ -126,14 +126,14 @@ All methods found in the [device](/api/device) can be called from the `occa` nam
 
 - C++
     ```cpp
-    occa::setDevice("mode: 'CUDA', deviceID: 0");
+    occa::setDevice("mode: 'CUDA', device_id: 0");
     occa::malloc(10 * sizeof(int));
     occa::buildKernel("myfile.okl", "myKernel");
     ```
 
 - C
     ```c
-    occaSetDevice("mode: 'CUDA', deviceID: 0");
+    occaSetDevice("mode: 'CUDA', device_id: 0");
     occaMalloc(10 * sizeof(int));
     occaBuildKernel("myfile.okl", "myKernel");
     ```
