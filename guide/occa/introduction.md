@@ -145,6 +145,19 @@ Here are examples for the all core modes supported in OCCA.
     }
     ```
 
+- HIP
+
+    ```cpp
+    "mode: 'HIP', device_id: 0"
+    ```
+
+    ```js
+    {
+      mode: 'HIP',
+      device_id: 0
+    }
+    ```
+
 :::
 
 # Memory

@@ -76,6 +76,14 @@ We'll initialize our device by giving it the backend we wish to use along with i
     );
     ```
 
+- HIP
+
+    ```c
+    occaDevice device = occaCreateDevice(
+        occaString("mode: 'HIP', device_id: 0")
+    );
+    ```
+
 :::
 
 ## Initializing Device Vectors
