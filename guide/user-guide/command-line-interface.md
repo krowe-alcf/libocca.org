@@ -69,7 +69,6 @@ Environment variables override compiled-time defines.
     - OCCA_OPENMP_ENABLED        : 0
     - OCCA_OPENCL_ENABLED        : 1
     - OCCA_CUDA_ENABLED          : 1
-    - OCCA_HIP_ENABLED           : 0
   Run-Time Options:
     - OCCA_CXX                   : clang++
     - OCCA_CXXFLAGS              : -g
@@ -78,8 +77,6 @@ Environment variables override compiled-time defines.
     - OCCA_OPENCL_COMPILER_FLAGS : -I. -cl-single-precision-constant -cl-denorms-are-zero -cl-single-precision-constant -cl-fast-relaxed-math -cl-finite-math-only -cl-mad-enable -cl-no-signed-zeros
     - OCCA_CUDA_COMPILER         : nvcc
     - OCCA_CUDA_COMPILER_FLAGS   : -I. --compiler-options -O3 --use_fast_math
-    - OCCA_HIP_COMPILER          : [NOT SET]
-    - OCCA_HIP_COMPILER_FLAGS    : [NOT SET]
 ```
 
 # Cache
