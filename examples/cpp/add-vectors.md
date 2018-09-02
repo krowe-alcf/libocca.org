@@ -1,8 +1,8 @@
 # Add Vectors
 
 **Source Code**
-- [main.cpp](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/cpp/main.cpp)
-- [addVectors.okl](https://github.com/libocca/occa/blob/master/examples/1_add_vectors/cpp/addVectors.okl)
+- [main.cpp](https://github.com/libocca/occa/blob/master/examples/cpp/1_add_vectors/main.cpp)
+- [addVectors.okl](https://github.com/libocca/occa/blob/master/examples/cpp/1_add_vectors/addVectors.okl)
 
 ---
 
