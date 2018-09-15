@@ -1,5 +1,6 @@
 - **User Guide**
   - [Introduction](/guide/user-guide/introduction)
+  - [Python Setup](/guide/user-guide/python-setup)
   - [Command-Line Interface](/guide/user-guide/command-line-interface)
   - [Need Help?](/guide/user-guide/need-help)
 

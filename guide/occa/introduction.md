@@ -48,7 +48,15 @@ We start off by connecting to a physical device through an OCCA device object.
     ```c
     #include "occa.h"
 
-    occaDevice device = occaCreateDevice(occaString("mode: 'Serial'"));
+    occaDevice device = occaCreateDeviceFromString("mode: 'Serial'");
+    ```
+
+- Python
+
+    ```python
+    import occa
+
+    device = occa.Device(mode='Serial')
     ```
 
 :::
@@ -174,6 +182,18 @@ For our case, we'll initialize data in the host and copy it to the device.
     }
     ```
 
+- Python
+
+    ```python
+    import numpy as np
+
+    entries = 10
+
+    a  = np.arange(entries, dtype=np.float32)
+    b  = 1 - a
+    ab = np.zeros(entries, dtype=np.float32)
+    ```
+
 :::
 
 We now allocate and initialize device memory using our host arrays.
@@ -210,6 +230,14 @@ Since we'll be computing `o_ab` by summing `o_a` and `o_b`, there is no need to 
                                        NULL, occaDefault);
     ```
 
+- Python
+
+    ```python
+    o_a  = device.malloc(a)
+    o_b  = device.malloc(b)
+    o_ab = device.malloc(entries, dtype=np.float32)
+    ```
+
 :::
 
 # Kernel
@@ -239,6 +267,24 @@ Kernels are built at runtime so we require 2 things:
                                                   "addVectors");
     ```
 
+- Python
+
+    ```python
+    add_vectors_source = r'''
+    @kernel void addVectors(const int entries,
+                            const float *a,
+                            const float *b,
+                            float *ab) {
+      for (int i = 0; i < entries; ++i; @tile(16, @outer, @inner)) {
+        ab[i] = a[i] + b[i];
+      }
+    }
+    '''
+
+    add_vectors = device.build_kernel_from_string(add_vectors_source,
+                                                  'addVectors')
+    ```
+
 :::
 
 
@@ -258,6 +304,13 @@ We can now call `addVectors` with our device arrays.
     occaKernelRun(addVectors,
                   occaInt(entries),
                   o_a, o_b, o_ab);
+    ```
+
+- Python
+
+    ```python
+    add_vectors(np.intc(entries),
+                o_a, o_b, o_ab)
     ```
 
 :::
@@ -283,6 +336,12 @@ We'll show a few ways to sync the device with the host, the first being the `fin
     occaDeviceFinish(device);
     ```
 
+- Python
+
+    ```python
+    device.finish()
+    ```
+
 :::
 
 
@@ -302,6 +361,12 @@ The second way we can sync the device and host is through blocking copies to/fro
     occaCopyMemToPtr(b, o_b,
                      occaAllBytes, 0,
                      occaDefault);
+    ```
+
+- Python
+
+    ```python
+    o_ab.copy_to(ab)
     ```
 
 :::
@@ -329,6 +394,12 @@ In this case, we'll use the `memcpy` approach to sync the host and look at `o_ab
         fprintf(stderr, "addVectors failed!!\n");
       }
     }
+    ```
+
+- Python
+
+    ```python
+    print(ab)
     ```
 
 :::

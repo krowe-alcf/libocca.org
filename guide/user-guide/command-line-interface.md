@@ -126,6 +126,30 @@ OCCA caches other helpful files but it might be good to start with a clean envir
   Removing [/home/david/.occa/*], are you sure? [y/n]:
 ```
 
+# Translate
+
+We can translate kernels throught the CLI
+
+```bash
+occa translate --mode 'Serial' addVectors.okl
+```
+
+## Defines
+
+We can also define macros through the `-D` flag
+
+```bash
+occa translate -DMY_VALUE=1 --mode 'Serial' addVectors.okl
+```
+
+## Include Paths
+
+Let OCCA search for include paths with the `-I` flag
+
+```bash
+occa translate -I/path/to/kernel/dir --mode 'Serial' addVectors.okl
+```
+
 # Versions
 
 There is also a command to print versions of the OCCA API as well as the OKL parser

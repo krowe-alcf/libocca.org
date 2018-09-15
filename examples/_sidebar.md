@@ -1,5 +1,4 @@
-- Examples
-  - C++
-    - [Add Vectors](/examples/cpp/add-vectors)
-  - C
-    - [Add Vectors](/examples/c/add-vectors)
+- [Examples](/examples/)
+  - [C++](/examples/cpp/)
+  - [C](/examples/c/)
+  - [Python](/examples/py/)

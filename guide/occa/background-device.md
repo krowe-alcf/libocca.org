@@ -18,6 +18,12 @@ The _background device_ is a global `occa::device` object obtainable through:
     occaDevice backgroundDevice = occaGetDevice();
     ```
 
+- Python
+
+    ```python
+    device = occa.get_device()
+    ```
+
 :::
 
 ?> However, the beauty of the _background device_ is not having to fetch it to make `occa::device` calls!
@@ -42,6 +48,24 @@ For example, this is how we would compile kernels using the _background device_
                                             "addVectors");
     ```
 
+- Python
+
+    ```python
+    add_vectors_source = r'''
+    @kernel void addVectors(const int entries,
+                            const float *a,
+                            const float *b,
+                            float *ab) {
+      for (int i = 0; i < entries; ++i; @tile(16, @outer, @inner)) {
+        ab[i] = a[i] + b[i];
+      }
+    }
+    '''
+
+    add_vectors = occa.build_kernel_from_string(add_vectors_source,
+                                                'addVectors')
+    ```
+
 :::
 
 Similarly, we can allocate memory through _background device_ methods
@@ -51,14 +75,22 @@ Similarly, we can allocate memory through _background device_ methods
 - C++
 
     ```cpp
-    occa::memory o_a  = occa::malloc(entries * sizeof(float), a);
+    occa::memory o_a = occa::malloc(entries * sizeof(float), a);
     ```
 
 - C
 
     ```c
-    occaMemory o_a  = occaMalloc(entries * sizeof(float),
-                                 a, occaDefault);
+    occaMemory o_a = occaMalloc(entries * sizeof(float),
+                                a, occaDefault);
+    ```
+
+- Python
+
+    ```python
+    o_ab = device.malloc(a) # Where a is a numpy.ndarray
+    # or
+    o_ab = device.malloc(entries, dtype=np.float32)
     ```
 
 :::
@@ -81,6 +113,12 @@ The default _background device_ is set to
     occaDevice host = occaHost();
     ```
 
+- Python
+
+    ```python
+    host = occa.host()
+    ```
+
 :::
 
 which uses `Serial` mode and represents the machine's host.
@@ -101,6 +139,13 @@ You can set the _background device_ using an existing `occa::device` or `occa::p
     ```c
     occaSetDevice(device);
     occaSetDevice(occaString("mode: 'Serial'"));
+    ```
+
+- Python
+
+    ```python
+    occa.set_device(device)
+    occa.set_device(mode='Serial')
     ```
 
 :::
