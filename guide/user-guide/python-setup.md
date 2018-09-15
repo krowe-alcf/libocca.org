@@ -8,4 +8,4 @@ Use `pip` to install the `occa` package
 pip install occa
 ```
 
-Checkout the [Tutorial notebook](https://github.com/libocca/occa.py/blob/master/notebooks/Tutorial.ipynb) to get started
+Checkout the [Tutorial notebook](https://nbviewer.jupyter.org/github/libocca/occa.py/blob/master/notebooks/Tutorial.ipynb) to get started
