@@ -16,7 +16,6 @@
   - [Loops in Depth](/guide/okl/loops-in-depth)
   - [Atomics](/guide/okl/atomics)
 
-- **Customization**
-  - [Backends](/guide/customization/backends)
-  - [Attributes](/guide/customization/attributes)
-  - [Code Transformations](/guide/customization/code-transformations)
+- **Developer Zone**
+  - [C++](/guide/developer-zone/cpp)
+  - [Python](/guide/developer-zone/python)
